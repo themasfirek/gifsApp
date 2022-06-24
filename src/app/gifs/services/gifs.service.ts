@@ -35,19 +35,19 @@ export class GifsService {
 
     if(!this._historial.includes(query)){
       this._historial.unshift(query);//lo agrega al inicio del historial en el arreglo
-      this._historial = this._historial.splice(0,10);// limita el arreglo de a 10 resultados
+      this._historial = this._historial.splice(0,23);// limita el arreglo de a 10 resultados
       localStorage.setItem('historial', JSON.stringify(this._historial));//guardar informacion en localStorage
       
     }
 
     const params = new HttpParams()
       .set('api_key', this.apiKey)
-      .set('limit', '10')
+      .set('limit', '23')
       .set('q', query);
     
     this.http.get<SearchGifsResponse>(`${this.servicioUrl}/search`,{params})
     .subscribe( (resp) =>{
-      console.log(resp.data)
+      //console.log(resp.data)
       this.resultados=resp.data
       localStorage.setItem('resultado', JSON.stringify(this.resultados));
       

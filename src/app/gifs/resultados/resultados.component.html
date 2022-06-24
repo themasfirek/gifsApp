@@ -1,6 +1,6 @@
 
 
-<div class="row">
+<!-- <div class="row">
     
         <div *ngFor="let gif of resultados"
         class="col-md-4 col-sm-6 animate__animated animate__bounceIn">
@@ -13,6 +13,24 @@
                 </div>
             </div>
         </div>
+    
+    
+</div> -->
+
+<!-- <div *ngFor="let gif of resultados" class="d-flex flex-weap">
+    <img [src]="gif.images.downsized_medium.url" [alt]="gif.title" 
+                class="card-img-top">
+                <div class="card-body">
+                    <p class="card-text">{{gif.title}}</p>
+                </div>
+</div> -->
+
+<div  class="d-flex flex-wrap">
+        <div *ngFor="let gif of resultados">
+
+            <img [src]="gif.images.fixed_height.url" [alt]="gif.title" 
+            class="card-img-top">
+        </div>       
     
     
 </div>
